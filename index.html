@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Geluu ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:#050611;color:#fff;overflow-x:hidden;
+}
+#stars{position:fixed;inset:0;z-index:-2;background:
+ radial-gradient(circle at 20% 20%,#26234d 0,transparent 30%),
+ radial-gradient(circle at 80% 70%,#3b1738 0,transparent 30%),#050611}
+.star{position:fixed;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 3s infinite}
+@keyframes twinkle{50%{opacity:.15;transform:scale(.5)}}
+.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px}
+.card{text-align:center;max-width:800px;width:100%}
+.mono{font-family:monospace;letter-spacing:3px;color:#bdb7ff;font-size:.8rem;margin-bottom:20px}
+h1{font-size:clamp(3rem,10vw,7rem);font-weight:400;letter-spacing:4px}
+.glow{color:#ffd6ef;text-shadow:0 0 15px #ff7fbd,0 0 45px #a46cff}
+.subtitle{font-size:1.1rem;color:#ddd;margin:18px auto 30px;line-height:1.8}
+button{
+ border:1px solid #ffffff45;background:#ffffff0d;color:white;border-radius:999px;
+ padding:14px 28px;font-size:1rem;cursor:pointer;backdrop-filter:blur(8px);
+ transition:.3s
+}
+button:hover{background:#ffffff20;transform:translateY(-3px);box-shadow:0 0 25px #ff69b455}
+.hidden{display:none!important}
+section{min-height:100vh;padding:90px 7vw;display:flex;align-items:center;justify-content:center}
+.wrap{width:min(1100px,100%)}
+.section-title{text-align:center;font-size:clamp(2rem,6vw,4rem);font-weight:400;margin-bottom:15px}
+.section-sub{text-align:center;color:#bbb;margin-bottom:45px}
+.reveal{opacity:0;transform:translateY(30px);transition:1s}
+.reveal.show{opacity:1;transform:none}
+#gallery{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:25px
+}
+.photo{
+ aspect-ratio:3/4;border-radius:8px;padding:10px;background:#f6eee1;color:#27211f;
+ box-shadow:0 15px 35px #0008;transform:rotate(var(--r));
+ transition:.5s;cursor:pointer;position:relative
+}
+.photo:hover{transform:rotate(0) scale(1.06);z-index:2}
+.photo img{width:100%;height:82%;object-fit:cover;display:block}
+.caption{text-align:center;padding:9px 3px;font-size:.9rem}
+.placeholder{
+ border:1px dashed #ffffff55;background:#ffffff08;border-radius:15px;padding:35px;text-align:center;
+ color:#aaa;line-height:1.7
+}
+.heart-zone{
+ height:380px;border:1px solid #ffffff18;border-radius:25px;position:relative;overflow:hidden;
+ background:radial-gradient(circle,#ff5d9e12,transparent 55%)
+}
+.heart{position:absolute;font-size:28px;cursor:pointer;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-20px) rotate(8deg)}}
+.counter{text-align:center;margin-top:18px;color:#ccc}
+.message{
+ font-size:clamp(1.3rem,3vw,2rem);line-height:2;text-align:center;color:#eee;
+ max-width:850px;margin:auto;min-height:250px
+}
+.typecursor{border-right:2px solid #fff}
+.final{text-align:center}
+.gift{font-size:90px;cursor:pointer;animation:pulse 2s infinite;display:inline-block}
+@keyframes pulse{50%{transform:scale(1.12)}}
+#music{
+position:fixed;right:18px;bottom:18px;z-index:10;width:50px;height:50px;padding:0;
+display:flex;align-items:center;justify-content:center
+}
+.modal{position:fixed;inset:0;background:#000d;display:flex;align-items:center;justify-content:center;z-index:20;padding:25px}
+.modal img{max-width:90vw;max-height:85vh;border-radius:12px;box-shadow:0 0 60px #000}
+.close{position:absolute;top:20px;right:25px;font-size:28px}
+.small{font-size:.85rem;color:#999;margin-top:25px}
+@media(max-width:600px){section{padding:70px 20px}.photo{max-width:260px;margin:auto;width:100%}}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<audio id="song" loop>
+  <!-- Put your legally obtained copy of "Hum Tum" here -->
+  <source src="hum-tum.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music" title="Music">♪</button>
+
+<div id="intro" class="screen">
+  <div class="card">
+    <div class="mono" id="loading">INITIALIZING SOMETHING SPECIAL...</div>
+    <h1 class="glow">Geluu</h1>
+    <p class="subtitle">There is a little world hidden behind this button.<br>It was made for one person.</p>
+    <button id="enter">Enter my little secret ✨</button>
+    <p class="small">Best experienced with headphones 🎧</p>
+  </div>
+</div>
+
+<main id="site" class="hidden">
+<section>
+  <div class="wrap reveal">
+    <div class="mono">01 / THE PERSON</div>
+    <h2 class="section-title">Why is there a whole website<br>for <span class="glow">Geluu</span>?</h2>
+    <p class="subtitle" style="text-align:center">
+      Because some people quietly become a beautiful part of your memories.
+    </p>
+  </div>
+</section>
+
+<section>
+ <div class="wrap reveal">
+  <div class="mono">02 / HER LITTLE GALLERY</div>
+  <h2 class="section-title">The face behind the smile 📸</h2>
+  <p class="section-sub">Add your photos to the <b>photos</b> folder and edit the filenames below.</p>
+  <div id="gallery">
+    <div class="placeholder">
+      <b>YOUR PHOTOS GO HERE ❤️</b><br><br>
+      Replace the image filenames in the JavaScript with your own photos.
+    </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap reveal">
+  <div class="mono">03 / A TINY GAME</div>
+  <h2 class="section-title">Find the hidden hearts 💕</h2>
+  <p class="section-sub">There are 5. Don't give up.</p>
+  <div class="heart-zone" id="heartZone"></div>
+  <div class="counter" id="counter">Hearts found: 0 / 5</div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap reveal">
+  <div class="mono">04 / SOMETHING I WANTED TO SAY</div>
+  <div class="message" id="message"></div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap reveal final">
+  <div class="mono">05 / THE LAST LITTLE SURPRISE</div>
+  <h2 class="section-title">One last thing...</h2>
+  <div class="gift" id="gift">🎁</div>
+  <p class="section-sub">Tap the box.</p>
+  <div id="finalText" class="message hidden"></div>
+ </div>
+</section>
+</main>
+
+<div id="modal" class="modal hidden">
+ <button class="close" id="close">×</button>
+ <img id="modalImg" src="" alt="Geluu">
+</div>
+
+<script>
+// ===============================
+// 1. ADD GELUU'S PHOTOS HERE
+// ===============================
+const photos = [
+  // Example:
+  // {src:"photos/geluu1.jpg", caption:"That smile ❤️"},
+  // {src:"photos/geluu2.jpg", caption:"Simply Geluu ✨"},
+  // {src:"photos/geluu3.jpg", caption:"A beautiful memory"},
+  // {src:"photos/geluu4.jpg", caption:"No caption needed."},
+];
+
+// Create stars
+for(let i=0;i<100;i++){
+ const s=document.createElement("div"); s.className="star";
+ s.style.left=Math.random()*100+"vw"; s.style.top=Math.random()*100+"vh";
+ s.style.animationDelay=Math.random()*3+"s"; document.getElementById("stars").appendChild(s);
+}
+
+const enter=document.getElementById("enter"), site=document.getElementById("site");
+const intro=document.getElementById("intro"), song=document.getElementById("song");
+const music=document.getElementById("music");
+
+enter.onclick=()=>{
+ intro.classList.add("hidden"); site.classList.remove("hidden");
+ song.play().catch(()=>{});
+ document.querySelectorAll(".reveal").forEach((x,i)=>setTimeout(()=>x.classList.add("show"),i*150));
+ window.scrollTo(0,0);
+};
+
+music.onclick=()=>{
+ if(song.paused){song.play();music.textContent="♫"}
+ else{song.pause();music.textContent="♪"}
+};
+
+// Gallery
+const gallery=document.getElementById("gallery");
+if(photos.length){
+ gallery.innerHTML="";
+ photos.forEach((p,i)=>{
+   const card=document.createElement("div"); card.className="photo";
+   card.style.setProperty("--r",(i%2===0?-2.5:2.5)+"deg");
+   card.innerHTML=`<img src="${p.src}" alt="Geluu photo"><div class="caption">${p.caption||"Geluu ❤️"}</div>`;
+   card.onclick=()=>{document.getElementById("modalImg").src=p.src;document.getElementById("modal").classList.remove("hidden")};
+   gallery.appendChild(card);
+ });
+}
+
+// Modal
+document.getElementById("close").onclick=()=>document.getElementById("modal").classList.add("hidden");
+document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")e.currentTarget.classList.add("hidden")};
+
+// Hidden hearts
+let found=0;
+const zone=document.getElementById("heartZone"), counter=document.getElementById("counter");
+for(let i=0;i<5;i++){
+ const h=document.createElement("span");h.className="heart";h.textContent="♡";
+ h.style.left=(8+Math.random()*84)+"%";h.style.top=(10+Math.random()*75)+"%";
+ h.style.animationDelay=Math.random()*2+"s";
+ h.onclick=()=>{
+   if(h.dataset.found)return;
+   h.dataset.found=1;h.textContent="❤️";found++;
+   counter.textContent=`Hearts found: ${found} / 5`;
+   if(found===5){
+    counter.textContent="You found all five. ❤️";
+    setTimeout(()=>document.getElementById("message").scrollIntoView({behavior:"smooth"}),700);
+   }
+ };
+ zone.appendChild(h);
+}
+
+// Typewriter
+const text=`Geluu...
+
+I know you don't feel the same way I do,
+and I respect that.
+
+I didn't make this little website to change your mind,
+or to put any pressure on you.
+
+I just wanted to turn a few feelings into something
+you could smile at.
+
+Some people come into our lives,
+and somehow make ordinary moments feel special.
+
+For me, you are one of those people. ❤️`;
+
+let typed=false;
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+  if(e.isIntersecting && !typed){
+   typed=true; const el=document.getElementById("message"); let i=0;
+   const timer=setInterval(()=>{
+    el.innerHTML=text.slice(0,i).replace(/\n/g,"<br>")+"<span class='typecursor'></span>";
+    i++;
+    if(i>text.length){clearInterval(timer);el.innerHTML=text.replace(/\n/g,"<br>");}
+   },28);
+  }
+ });
+},{threshold:.25});
+observer.observe(document.getElementById("message"));
+
+// Final surprise
+document.getElementById("gift").onclick=()=>{
+ const f=document.getElementById("finalText");
+ f.classList.remove("hidden");
+ f.innerHTML=`Thank you for being you. ❤️<br><br>
+No expectations. No pressure.<br>
+Just a little reminder that I'm genuinely glad I met you.<br><br>
+<span class="glow">— from someone who'll always wish you happiness.</span>`;
+ document.getElementById("gift").textContent="💖";
+};
+</script>
+</body>
+</html>
